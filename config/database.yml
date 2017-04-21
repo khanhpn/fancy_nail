@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password:
+
+development:
+  <<: *default
+  database: fancy_nail_development
+test:
+  <<: *default
+  database: fancy_nail_test
+production:
+  <<: *default
+  database: fancy_nail_production
