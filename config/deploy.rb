@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'fancy'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:khanhpn/fancy_nail.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
