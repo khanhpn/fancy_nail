@@ -6,10 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script type="application/x-javascript">
+      addEventListener("load", function() {
+        setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render partial: "layouts/shared/header" %>
+    <%= render partial: "layouts/shared/banner" %>
+    <%= render partial: "layouts/shared/banner2" %>
     <%= yield %>
+    <%= render partial: "layouts/shared/feature" %>
+    <%= render partial: "layouts/shared/footer" %>
   </body>
 </html>
