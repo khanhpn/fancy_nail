@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def create
     product = @category.products.new(set_params)
+    binding.pry
     if product.save
       redirect_to product_path(product), notice: "Create product sucessfully"
     else
@@ -20,6 +21,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = @category.products.new
+    @product.pictures.build
   end
 
   def update
@@ -43,6 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def set_params
-    params.require(:product).permit(:name, :description, :price, :category_id)
+    params.require(:product).permit(:name, :description, :price, :category_id, pictures_attributes: [:id, :url_picture])
   end
 end

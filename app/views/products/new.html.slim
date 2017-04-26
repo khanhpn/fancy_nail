@@ -13,6 +13,7 @@ div class="panel panel-default"
               th Price
               th Description
               th Category
+              th Picture
               th Action
           tbody
             tr
@@ -20,4 +21,7 @@ div class="panel panel-default"
               td = f.text_field :price, class: "form-control"
               td = f.text_area :description, class: "form-control", size: "10x10"
               td = f.text_field :category_id, class: "form-control"
+              td
+                = f.fields_for :pictures do |pic|
+                  = pic.file_field :url_picture, multiple: true, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
               td = f.submit "Create", class: "btn btn-success"
