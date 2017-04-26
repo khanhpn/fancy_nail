@@ -1,0 +1,17 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Edit category
+    div class="panel-body"
+      - if @category.errors.present?
+        p = @category.errors.full_messages
+
+      = form_for @category, as: :category, url: category_path(@category), method: :patch, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.submit "Update", class: "btn btn-success"

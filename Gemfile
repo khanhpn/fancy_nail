@@ -34,6 +34,8 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-passenger'
   gem 'capistrano-yarn'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -48,5 +50,6 @@ gem 'carrierwave', '~> 1.0'
 gem 'passenger'
 gem "slim-rails"
 gem 'friendly_id', '~> 5.1.0'
+gem 'kaminari', '~> 1.0.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

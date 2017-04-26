@@ -1,0 +1,17 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Create new category
+    div class="panel-body"
+      - if @category.errors.present?
+        p = @category.errors.full_messages
+
+      = form_for @category, as: :category, url: categories_path(@category), method: :post, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.submit "Create", class: "btn btn-success"

@@ -1,0 +1,23 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | List categories
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th Id
+          th Name
+          th Created at
+          th Updated at
+      tbody
+        - @categories.each do |cat|
+          tr
+            th scope="row" = cat&.id
+            td = cat&.name
+            td = cat&.created_at
+            td = cat&.updated_at
+    = paginate @categories
+  div
+    = link_to "New", new_category_path, class: "btn btn-success"
