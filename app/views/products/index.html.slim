@@ -1,2 +1,27 @@
-h1 Products#index
-p Find me in app/views/products/index.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    | List products
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th Id
+          th Name
+          th Description
+          th Price
+          th Category
+          th Created at
+          th Updated at
+      tbody
+        - @products.each do |pro|
+          tr
+            th scope="row" = pro&.id
+            td = pro&.name
+            td = pro&.description
+            td = pro&.price
+            td = pro&.category&.name
+            td = pro&.created_at
+            td = pro&.updated_at
+    = paginate @products

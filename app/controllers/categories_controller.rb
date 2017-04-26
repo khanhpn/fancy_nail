@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout 'admin'
   before_action :set_category, only: [:edit, :destroy, :update, :show]
   before_action :set_params, only: [:create, :update]
 
@@ -16,7 +17,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
   end
 
   def create
@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Category.friendly.find_by(id: params[:id])
+    @category = Category.friendly.find(params[:id])
   end
 
   def set_params

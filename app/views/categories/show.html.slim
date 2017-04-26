@@ -1,0 +1,22 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Show category
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th Id
+          th Name
+          th Created at
+          th Updated at
+      tbody
+        tr
+          th scope="row" = @category&.id
+          td = @category&.name
+          td = @category&.created_at
+          td = @category&.updated_at
+  div
+    = link_to "New", new_category_path, class: "btn btn-success"
+    = link_to "New product", new_category_product_path(@category), class: "btn btn-success"

@@ -13,7 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require cable
-//= require sample
-//= require_tree ./new_layout
+//= require_tree ./admin
 //= require bootstrap/dist/js/bootstrap

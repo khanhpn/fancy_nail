@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
+  paginates_per 10
 
   has_many :pictures, dependent: :destroy
   belongs_to :category

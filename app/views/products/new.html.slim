@@ -1,0 +1,23 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Create product
+    div class="panel-body"
+      - if @product.errors.present?
+        p = @product.errors.full_messages
+
+      = form_for @product, as: :product, url: category_products_path(@category), method: :post, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Price
+              th Description
+              th Category
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_field :price, class: "form-control"
+              td = f.text_area :description, class: "form-control", size: "10x10"
+              td = f.text_field :category_id, class: "form-control"
+              td = f.submit "Create", class: "btn btn-success"
