@@ -1,0 +1,27 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Show product
+    div class="panel-body"
+      p
+
+    table.table
+      tbody
+        tr
+          th Id
+          td scope="row" = @product&.id
+        tr
+          td = @product&.name
+        tr
+          td = @product&.price
+        tr
+          td = @product&.description
+        tr
+          td = @product&.category&.name
+        tr
+          td = Product.specials[@product.special]
+        tr
+          td = @product&.pictures&.pluck(:url_picture)
+        tr
+          td = @product&.created_at
+        tr
+          td = @product&.updated_at

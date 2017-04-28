@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ./admin
+//= require library/dropzone
 //= require bootstrap/dist/js/bootstrap

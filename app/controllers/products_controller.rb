@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   layout 'admin'
 
   before_action :set_category, only: [:create, :new]
-  before_action :set_product, only: [:update, :edit, :destroy]
+  before_action :set_product, only: [:update, :edit, :destroy, :show]
   before_action :set_params, only: [:create, :update]
 
   def index
@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     product = @category.products.new(set_params)
-    binding.pry
     if product.save
       redirect_to product_path(product), notice: "Create product sucessfully"
     else
@@ -34,6 +34,10 @@ class ProductsController < ApplicationController
 
   def show; end
 
+  def upload_image
+    render json: { message: 'You have successfully uploded your images.' }
+  end
+
   private
 
   def set_product
@@ -45,6 +49,6 @@ class ProductsController < ApplicationController
   end
 
   def set_params
-    params.require(:product).permit(:name, :description, :price, :category_id, pictures_attributes: [:id, :url_picture])
+    params.require(:product).permit(:name, :description, :price, :category_id, :special, :pictures_attributes => [:id, :url_picture])
   end
 end
