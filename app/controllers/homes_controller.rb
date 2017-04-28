@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   def index
+    @newest = Product.newest
   end
 
   def contact
