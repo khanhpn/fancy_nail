@@ -33,9 +33,9 @@ input[type="button"],input[type="submit"]{
 	-ms-transition:0.5s all;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;	
+	margin:0;
 	font-family: 'PlayfairDisplay-Regular';
-}	
+}
 p{
 	margin:0;
 }
@@ -93,7 +93,7 @@ a.simpleCart_empty {
   float: left;
 }
 .banner {
-	background:url("../images/banner_img.jpg") no-repeat 0px 0px;
+  background: url(asset-path('bg2.jpg')) no-repeat 0px 0px;
 	background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
@@ -109,15 +109,15 @@ a.simpleCart_empty {
 }
 .logo a span {
 	color: #816263;
-    font-size: 35px;
+    font-size: 33px;
     border: 2px solid #816263;
     border-radius: 50%;
-    width: 50px;
+    width: 102px;
     display: block;
     text-align: center;
     float: left;
     padding: 2px 0 0 4px;
-    height: 50px;
+    height: 43px;
     vertical-align: middle;
     margin-right: 3px;
 }
@@ -438,7 +438,7 @@ ul.multi-column-dropdown h6 {
 .shop a:hover {
 	color:#fff;
 	background-color:#816263;
-	border:1px solid #816263;	
+	border:1px solid #816263;
 }
 /*-- online-strip --*/
 .online-strip {
@@ -1000,7 +1000,7 @@ ul.product-qty {
 	font-size: 1em;
 	padding: 13px 20px;
 	color: #fff;
-	
+
 	text-transform: uppercase;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -1336,7 +1336,7 @@ ul.product-qty {
 	font-size: 1em;
 	padding: 13px 20px;
 	color: #fff;
-	
+
 	text-transform: uppercase;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -1781,7 +1781,7 @@ p.click a:hover{
 	-webkit-transition: .5s all;
 	-o-transition: .5s all;
 	-ms-transition: .5s all;
-	-moz-transition: .5s all;	
+	-moz-transition: .5s all;
 }
 .contact-info h2{
 	text-align: center;
@@ -2151,7 +2151,7 @@ p.right {
 /*-- //single-page --*/
 
 /*-- responsine-design --*/
-@media screen and (max-width: 1366px) {	
+@media screen and (max-width: 1366px) {
 	.banner {
 		min-height: 650px;
 	}
@@ -2174,7 +2174,7 @@ p.right {
 		margin: 0px 0 60px 0;
 	}
 }
-@media screen and (max-width: 1280px) {	
+@media screen and (max-width: 1280px) {
 	.banner {
 		min-height: 608px;
 	}
@@ -2202,7 +2202,7 @@ p.right {
 		font-size: 35px;
 	}
 }
-@media screen and (max-width: 1024px) {	
+@media screen and (max-width: 1024px) {
 	.navbar-header {
 		width: 17%;
 	}
@@ -2308,7 +2308,7 @@ p.right {
 		margin: 0px 0 50px 0;
 	}
 }
-@media screen and (max-width: 800px) {	
+@media screen and (max-width: 800px) {
 	.logo a span {
 		font-size: 28px;
 		width: 45px;
@@ -2416,7 +2416,7 @@ p.right {
 	.follow-us,.shipping-grid,.online-order {
 		width: 33.333%;
 		float: left;
-	}	
+	}
 	.shipping {
 		width: 18%;
 		margin-left: 11%;
@@ -2441,14 +2441,14 @@ p.right {
 		float: left;
 		width: 47%;
 		margin-right:3%
-	}	
+	}
 	.login-right {
 		float: left;
 		width: 50%;
-	}	
+	}
 	.login-right p {
 		margin: 0 0 1.3em 0;
-	}	
+	}
 	.dreamcrub {
 		margin: 0px 0 45px 0;
 	}
@@ -2496,7 +2496,7 @@ p.right {
 		width: 16%;
 	}
 }
-@media screen and (max-width: 768px) {	
+@media screen and (max-width: 768px) {
 	.banner-info {
 		margin-top: 75px;
 	}
@@ -2528,7 +2528,7 @@ p.right {
 		font-size: 22px;
 	}
 }
-@media screen and (max-width: 640px) {	
+@media screen and (max-width: 640px) {
 	.navbar-header {
 		width: 100%;
 	}
@@ -2664,7 +2664,7 @@ p.right {
 	.cart-items h2 {
 		margin: 0;
 		font-size: 20px;
-	}	
+	}
 	.cart-item-info {
 		margin-top: 1%;
 	}
@@ -2685,7 +2685,7 @@ p.right {
 		margin-right: 2%;
 	}
 }
-@media screen and (max-width: 480px) {	
+@media screen and (max-width: 480px) {
 	.product {
 		padding: 0 10px;
 		width: 50%;
@@ -2716,7 +2716,7 @@ p.right {
 	}
 	.contact-form input[type=submit] {
 		margin-top: 15px;
-	}	
+	}
 	.join input[type="text"] {
 		width: 70%;
 	}
@@ -2778,7 +2778,7 @@ p.right {
 	}
 	.follow-us,  .online-order {
 		margin-top: 15px;
-	}	
+	}
 	.products {
 		width: 100%;
 		margin-bottom:15px;
@@ -2837,7 +2837,7 @@ p.right {
 		margin-right: 2%;
 	}
 }
-@media screen and (max-width: 320px) {	
+@media screen and (max-width: 320px) {
 	.header-top-left {
 		width: 100%;
 		text-align: center;
@@ -3029,10 +3029,10 @@ p.right {
 	}
 	p.left {
 		width: 62%;
-	}	
+	}
 	.col-md-7.dress-info {
 		padding: 0;
-	}	
+	}
 	.dress-name h3 {
 		width: 100%;
 	}
@@ -3047,7 +3047,7 @@ p.right {
 		padding: 5px;
 		display:none;
 	}
-	
+
 	.product_image:hover .mask {
 		display: none;
 	}

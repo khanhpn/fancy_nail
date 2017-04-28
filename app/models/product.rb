@@ -11,5 +11,5 @@ class Product < ApplicationRecord
   validates :name, presence: true, length: {in: 1..200}
   validates :price, presence: true, allow_nil: true, allow_blank: true
 
-  enum specials: {feature: "Feature", newest: "Newest", sale: "Sale"}
+  enum special: {feature: "Feature", newest: "Newest", sale: "Sale"}
 end
