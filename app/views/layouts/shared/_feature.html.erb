@@ -7,7 +7,7 @@
           <%= link_to image_tag("l1.jpg", class: "img-responsive"), "" %>
           <div class="product liked-product simpleCart_shelfItem">
             <%= link_to feature&.name, "", class: "like_name" %>
-            <p><a class="item_add" href="#"><i></i><span class=" item_price"><%= number_to_currency(feature&.price, precision: 3) %></span></p>
+            <p><a class="item_add" href="#"><i></i><span class=" item_price"><%= number_to_currency(feature&.price) %></span></p>
           </div>
         </li>
       <% end %>

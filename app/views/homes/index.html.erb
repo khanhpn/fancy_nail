@@ -32,7 +32,7 @@
                 <a href="single.html">Quick View</a>
               </div>
               <%= link_to newest&.name, "", class: "product_name" %>
-              <p><a class="item_add" href="#"><span class="item_price"><%= number_to_currency(newest&.price, precision: 3) %></span></a></p>
+              <p><a class="item_add" href="#"><span class="item_price"><%= number_to_currency(newest&.price) %></span></a></p>
             </div>
           <% end %>
           <div class="clearfix"></div>
