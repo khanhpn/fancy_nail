@@ -15,4 +15,3 @@
 //= require cable
 //= require_tree ./new_layout
 //= require bootstrap/dist/js/bootstrap
-//= require sample

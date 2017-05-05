@@ -2,21 +2,31 @@
 <html>
   <head>
     <title>FancyNail</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <%= favicon_link_tag "ico/favicon.ico" %>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <script type="application/x-javascript">
-      addEventListener("load", function() {
-        setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-    </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%# render partial: "layouts/shared/header" %>
-    <%= render partial: "layouts/shared/banner" %>
-    <%= render partial: "layouts/shared/banner2" %>
+    <header id="header"><!--header-->
+      <%= render partial: "layouts/shared/header_top" %>
+      <%= render partial: "layouts/shared/header_middle" %>
+      <%= render partial: "layouts/shared/header_bottom" %>
+    </header>
+    <%= render partial: "layouts/shared/slider" %>
     <%= yield %>
     <%= render partial: "layouts/shared/footer" %>
   </body>
