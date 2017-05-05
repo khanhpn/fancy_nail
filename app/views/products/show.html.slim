@@ -26,7 +26,7 @@ div class="panel panel-default"
           td = Product.specials[@product.special]
         tr
           th Image
-          td = image_tag(@product&.pictures&.first&.url_picture, size: "140x140") if @product&.pictures&.first&.url_picture
+          td = default_image?(@product&.pictures&.first&.url_picture)
         tr
           th Action
           td

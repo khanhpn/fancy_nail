@@ -25,6 +25,12 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product.assign_attributes(set_params)
+    if @product.save
+      redirect_to product_path(@product), notice: "You updated product successfully."
+    else
+      render :edit
+    end
   end
 
   def destroy

@@ -21,7 +21,7 @@ div class="panel panel-default"
             td = pro&.name
             td = pro&.description
             td = pro&.price
-            td = image_tag(pro&.pictures&.first&.url_picture, size: "140x140") if pro&.pictures&.first&.url_picture
+            td = default_image?(pro&.pictures&.first&.url_picture)
             td = pro&.category&.name
             td
               = link_to "Edit product", edit_product_path(pro), class: "btn btn-warning"
