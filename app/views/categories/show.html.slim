@@ -18,6 +18,15 @@ div class="panel panel-default"
           td = @category&.created_at
           td = @category&.updated_at
   div
-    = link_to "New", new_category_path, class: "btn btn-success"
-    = link_to "New product", new_category_product_path(@category), class: "btn btn-success"
+    = link_to "Back", categories_path, class: "btn btn-warning"
+    | &emsp;
+    = link_to "New category", new_category_path, class: "btn btn-success"
+    | &emsp;
+    = link_to "Edit category", edit_category_path(@category), class: "btn btn-warning"
+    | &emsp;
+    = link_to "Delete category", category_path(@category), class: "btn btn-primary", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+    | &emsp;
+    = link_to "New product", new_category_product_path(@category), class: "btn btn-primary"
+    | &emsp;
     = link_to "List products", category_products_path(@category), class: "btn btn-success"
+    | &emsp;

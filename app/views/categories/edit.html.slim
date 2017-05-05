@@ -15,3 +15,5 @@ div class="panel panel-default"
             tr
               td = f.text_field :name, class: "form-control"
               td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", category_path(@category), class: "btn btn-success"

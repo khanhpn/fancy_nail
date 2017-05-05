@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   layout 'admin'
+  before_action :basic_authentication
   before_action :set_category, only: [:edit, :destroy, :update, :show]
   before_action :set_params, only: [:create, :update]
 
@@ -14,10 +15,14 @@ class CategoriesController < ApplicationController
   def edit; end
 
   def destroy
+    if @category.destroy
+      redirect_to categories_path, notice: "You destroyed a category"
+    else
+      redirect_to categories_path, notice: "You can't destroy this category"
+    end
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @category = Category.new(set_params)
@@ -31,7 +36,7 @@ class CategoriesController < ApplicationController
   def update
     @category.assign_attributes(set_params)
     if @category.save
-      redirect_to category_path(@category)
+      redirect_to category_path(@category), notice: "You updated this category successfully"
     else
       render :edit
     end

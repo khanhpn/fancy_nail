@@ -9,15 +9,15 @@ div class="panel panel-default"
         tr
           th Id
           th Name
-          th Created at
-          th Updated at
+          th Actions
       tbody
         - @categories.each do |cat|
           tr
             th scope="row" = link_to cat&.id, category_path(cat&.id)
             td = cat&.name
-            td = cat&.created_at
-            td = cat&.updated_at
+            td
+              = link_to "Edit category", edit_category_path(cat), class: "btn btn-warning"
+              = link_to "Delete category", category_path(cat), class: "btn btn-primary", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
     = paginate @categories
   div
-    = link_to "New", new_category_path, class: "btn btn-success"
+    = link_to "New category", new_category_path, class: "btn btn-success"

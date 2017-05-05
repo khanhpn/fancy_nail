@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   layout 'admin'
-
+  before_action :basic_authentication
   before_action :set_category, only: [:create, :new]
   before_action :set_product, only: [:update, :edit, :destroy, :show]
   before_action :set_params, only: [:create, :update]
