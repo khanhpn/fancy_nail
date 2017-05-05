@@ -2,6 +2,7 @@ class HomesController < ApplicationController
   def index
     @newests = Product.newest.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
     @features = Product.feature.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
+    @categories = Category.includes(:products)
   end
 
   def contact
