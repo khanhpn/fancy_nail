@@ -21,10 +21,12 @@ div class="panel panel-default"
               td = f.text_field :name, class: "form-control"
               td = f.text_field :price, class: "form-control"
               td = f.text_area :description, class: "form-control", size: "10x10"
-              td = f.text_field :category_id, class: "form-control"
+              td = f.select :category_id, options_for_select(Category.all.pluck(:name, :id), selected: @product&.category_id), {prompt: "Select special"}, {class: "form-control", id: ""}
               td
                 = f.select :special, Product.specials.to_a, {prompt: "Select special"}, {class: "form-control", id: ""}
               td
                 = f.fields_for :pictures do |pic|
                   = pic.file_field :url_picture, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
               td = f.submit "Create", class: "btn btn-success"
+
+= link_to "Back", products_path, class: "btn btn-success"

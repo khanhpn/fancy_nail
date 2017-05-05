@@ -11,9 +11,9 @@ div class="panel panel-default"
           th Name
           th Description
           th Price
+          th Image
           th Category
-          th Created at
-          th Updated at
+          th Actions
       tbody
         - @products.each do |pro|
           tr
@@ -21,7 +21,14 @@ div class="panel panel-default"
             td = pro&.name
             td = pro&.description
             td = pro&.price
+            td = image_tag(pro&.pictures&.first&.url_picture, size: "140x140") if pro&.pictures&.first&.url_picture
             td = pro&.category&.name
-            td = pro&.created_at
-            td = pro&.updated_at
+            td
+              = link_to "Edit product", edit_product_path(pro), class: "btn btn-warning"
+              | &emsp;
+              = link_to "Show product", product_path(pro), class: "btn btn-primary"
+              | &emsp;
+              = link_to "Delete product", product_path(pro), class: "btn btn-success", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+              | &emsp;
+              = link_to "Show category", category_path(pro&.category_id), class: "btn btn-primary"
     = paginate @products

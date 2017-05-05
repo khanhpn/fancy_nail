@@ -1,0 +1,32 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Create product
+    div class="panel-body"
+      - if @product.errors.present?
+        p = @product.errors.full_messages
+
+      = form_for @product, as: :product, url: category_products_path(@product.category_id), method: :post, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Price
+              th Description
+              th Category
+              td Feature
+              th Picture
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_field :price, class: "form-control"
+              td = f.text_area :description, class: "form-control", size: "10x10"
+              td = f.select :special, Product.specials.to_a, {prompt: "Select special"}, {class: "form-control", id: ""}
+              td
+                = f.select :special, Product.specials.to_a, {prompt: "Select special"}, {class: "form-control", id: ""}
+              td
+                = f.fields_for :pictures do |pic|
+                  = pic.file_field :url_picture, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
+              td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", products_path, class: "btn btn-success"

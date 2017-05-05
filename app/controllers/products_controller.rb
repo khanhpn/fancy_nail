@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
   before_action :set_params, only: [:create, :update]
 
   def index
-    @products = Product.all.page(params[:page])
+    @products = Category.friendly.find(params["category_id"]).products.order(created_at: :desc).page(params[:page]) if params["category_id"].present?
+    @products = Product.all.order(created_at: :desc).page(params[:page]) unless params["category_id"].present?
   end
 
   def create
-    # binding.pry
     product = @category.products.new(set_params)
     if product.save
       redirect_to product_path(product), notice: "Create product sucessfully"
@@ -28,6 +28,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.destroy
+      redirect_to products_path, notice: "Deleted product successfully"
+    else
+      redirect_to products_path, notice: "You can't delete this product"
+    end
   end
 
   def edit; end
