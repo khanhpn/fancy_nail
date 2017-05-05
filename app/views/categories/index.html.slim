@@ -14,7 +14,7 @@ div class="panel panel-default"
       tbody
         - @categories.each do |cat|
           tr
-            th scope="row" = cat&.id
+            th scope="row" = link_to cat&.id, category_path(cat&.id)
             td = cat&.name
             td = cat&.created_at
             td = cat&.updated_at
