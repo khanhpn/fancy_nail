@@ -51,6 +51,6 @@ gem 'passenger'
 gem "slim-rails"
 gem 'friendly_id', '~> 5.1.0'
 gem 'kaminari', '~> 1.0.1'
-
+gem 'font-awesome-sass'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
