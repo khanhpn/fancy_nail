@@ -60,13 +60,11 @@
                         <%= default_image?(feature&.pictures&.first&.url_picture) %>
                         <h2><%= feature&.price %></h2>
                         <p><%= feature&.name %></p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Details</a>
                       </div>
                       <div class="product-overlay">
                         <div class="overlay-content">
                           <h2><%= feature&.price %></h2>
                           <p><%= feature&.name %></p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Details</a>
                         </div>
                       </div>
                   </div>
@@ -95,7 +93,7 @@
             <div class="tab-content">
               <% @categories.each_with_index do |cat, index| %>
                 <div class="tab-pane fade <%= index == 0 ? 'active' : nil %> in" id="<%= cat.slug %>" >
-                  <% cat&.products&.take(4).each do |pro| %>
+                  <% cat&.products.each do |pro| %>
                   <div class="col-sm-3">
                     <div class="product-image-wrapper">
                       <div class="single-products">
@@ -103,7 +101,6 @@
                           <%= default_image?(pro&.pictures&.first&.url_picture) %>
                           <h2><%= pro&.price %></h2>
                           <p><%= pro&.name %></p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Detail</a>
                         </div>
                       </div>
                     </div>
@@ -127,7 +124,6 @@
                           <%= image_tag("home/recommend1.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
@@ -140,7 +136,6 @@
                           <%= image_tag("home/recommend1.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
@@ -153,7 +148,6 @@
                           <%= image_tag("home/recommend1.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
@@ -168,7 +162,6 @@
                           <%= image_tag("home/recommend1.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
@@ -181,7 +174,6 @@
                           <%= image_tag("home/recommend2.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
@@ -194,7 +186,6 @@
                           <%= image_tag("home/recommend3.jpg") %>
                           <h2>$56</h2>
                           <p>Easy Polo Black Edition</p>
-                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                         </div>
 
                       </div>
