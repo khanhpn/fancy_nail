@@ -10,16 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505025847) do
+ActiveRecord::Schema.define(version: 20170511035940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "advetisments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture_url"
+    t.string   "text"
+    t.integer  "position",    default: 0
+    t.boolean  "hidden_item", default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["hidden_item"], name: "index_advetisments_on_hidden_item", using: :btree
+    t.index ["position"], name: "index_advetisments_on_position", using: :btree
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "slug",       limit: 250
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "position",               default: 0
     t.index ["slug"], name: "index_categories_on_slug", using: :btree
   end
 

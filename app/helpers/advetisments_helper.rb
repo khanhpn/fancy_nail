@@ -1,0 +1,2 @@
+module AdvetismentsHelper
+end

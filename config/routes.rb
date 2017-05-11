@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :products, only: [:new, :create, :index]
   end
 
+  resources :advetisments
   get 'search'    => "search#index"
   get "download"  => "homes#download"
   get 'policy'    => "homes#policy"

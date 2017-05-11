@@ -1,0 +1,2 @@
+class Advetisment < ApplicationRecord
+end
