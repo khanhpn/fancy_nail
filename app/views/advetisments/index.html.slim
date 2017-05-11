@@ -10,8 +10,8 @@ div class="panel panel-default"
           th Id
           th Name
           th Picture
-          th Hidden
           th Position
+          th Hidden
           th Actions
       tbody
         - @advetisments.each do |ad|
@@ -19,6 +19,9 @@ div class="panel panel-default"
             th scope="row" = link_to ad&.id, advetisment_path(ad&.id)
             td = ad&.name
             td = ad&.position
+            td = image_tag(ad&.picture_url&.url, size: "80x80")
+            td = ad&.position
+            td = ad&.hidden_item ? "Yes" : "No"
             td
               = link_to "Edit advetisment", edit_advetisment_path(ad), class: "btn btn-warning"
               | &emsp;
@@ -26,5 +29,6 @@ div class="panel panel-default"
               | &emsp;
               = link_to "Show advetisment", advetisment_path(ad), class: "btn btn-success"
     = paginate @advetisments
+  br
   div
     = link_to "New advetisment", new_advetisment_path, class: "btn btn-success"

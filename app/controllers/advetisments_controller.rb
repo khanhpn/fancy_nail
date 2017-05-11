@@ -5,7 +5,7 @@ class AdvetismentsController < ApplicationController
   before_action :set_advetisment, only: [:edit, :show, :destroy]
 
   def index
-    @advetisments = Advetisment.all
+    @advetisments = Advetisment.all.page(params[:page])
   end
 
   def new
