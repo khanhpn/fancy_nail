@@ -16,15 +16,15 @@ div class="panel panel-default"
       tbody
         - @advetisments.each do |ad|
           tr
-            th scope="row" = link_to ad&.id, category_path(ad&.id)
+            th scope="row" = link_to ad&.id, advetisment_path(ad&.id)
             td = ad&.name
             td = ad&.position
             td
-              = link_to "Edit advetisment", edit_category_path(ad), class: "btn btn-warning"
+              = link_to "Edit advetisment", edit_advetisment_path(ad), class: "btn btn-warning"
               | &emsp;
-              = link_to "Delete advetisment", category_path(ad), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+              = link_to "Delete advetisment", advetisment_path(ad), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
               | &emsp;
-              = link_to "Show advetisment", category_path(ad), class: "btn btn-success"
+              = link_to "Show advetisment", advetisment_path(ad), class: "btn btn-success"
     = paginate @advetisments
   div
-    = link_to "New advetisment", new_category_path, class: "btn btn-success"
+    = link_to "New advetisment", new_advetisment_path, class: "btn btn-success"

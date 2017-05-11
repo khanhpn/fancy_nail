@@ -1,2 +1,21 @@
-h1 Advetisments#edit
-p Find me in app/views/advetisments/edit.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    | Edit advetisment
+    div class="panel-body"
+      - if @advetisments.errors.present?
+        p = @advetisments.errors.full_messages
+
+      = form_for @advetisments, as: :advetisments, url: category_path(@advetisments), method: :patch, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Position
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_field :position, class: "form-control"
+              td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", category_path(@advetisments), class: "btn btn-success"

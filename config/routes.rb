@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "download"  => "homes#download"
   get 'policy'    => "homes#policy"
   get 'term_of_use' => "homes#term_of_use"
+  get 'admin'   => "homes#admin"
 end

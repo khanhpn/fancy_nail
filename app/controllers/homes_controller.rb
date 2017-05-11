@@ -1,4 +1,7 @@
 class HomesController < ApplicationController
+  before_action :basic_authentication, only: [:admin]
+  layout 'admin', only: [:admin]
+
   def index
     @newests = Product.newest.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
     @features = Product.feature.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
@@ -20,4 +23,7 @@ class HomesController < ApplicationController
   def policy; end
 
   def term_of_use; end
+
+  def admin
+  end
 end
