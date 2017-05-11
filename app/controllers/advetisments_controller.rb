@@ -2,7 +2,7 @@ class AdvetismentsController < ApplicationController
   layout 'admin'
 
   before_action :set_params, only: [:create, :update]
-  before_action :set_advetisment, only: [:edit, :show, :destroy]
+  before_action :set_advetisment, only: [:edit, :show, :destroy, :update]
 
   def index
     @advetisments = Advetisment.all.page(params[:page])
@@ -18,7 +18,7 @@ class AdvetismentsController < ApplicationController
   def create
     advetisment = Advetisment.new(set_params)
     if advetisment.save
-      redirect_to root_path, notice: "You created advetisment successfully."
+      redirect_to advetisment_path(advetisment), notice: "You created advetisment successfully."
     else
       render :edit
     end
@@ -30,19 +30,20 @@ class AdvetismentsController < ApplicationController
   def update
     @advetisment.assign_attributes(set_params)
     if @advetisment.save
-      redirect_to root_path, notice: "You updated advetisment successfully."
+      redirect_to advetisment_path(@advetisment), notice: "You updated advetisment successfully."
     else
-      redirect_to root_path, notice: "You can't updat advetisment."
+      redirect_to advetisment_path(@advetisment), notice: "You can't updat advetisment."
     end
   end
 
   def destroy
     @advetisment.destroy
+    redirect_to advetisments_path, notice: "You deleted advetisment successfully."
   end
 
   private
   def set_params
-    params.require(:advetisment).permit(:name, :picture_url, :text, :position, :hidden_item)
+    params.require(:advetisment).permit(:name, :picture_url, :text, :position, :hidden_item, :description, :icon_name)
   end
 
   def set_advetisment

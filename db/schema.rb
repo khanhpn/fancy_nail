@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511035940) do
+ActiveRecord::Schema.define(version: 20170511120513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,13 @@ ActiveRecord::Schema.define(version: 20170511035940) do
     t.string   "name"
     t.string   "picture_url"
     t.string   "text"
-    t.integer  "position",    default: 0
-    t.boolean  "hidden_item", default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "position",                default: 0
+    t.boolean  "hidden_item",             default: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "slug",        limit: 250
+    t.text     "description"
+    t.string   "icon_name"
     t.index ["hidden_item"], name: "index_advetisments_on_hidden_item", using: :btree
     t.index ["position"], name: "index_advetisments_on_position", using: :btree
   end

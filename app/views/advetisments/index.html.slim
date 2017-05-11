@@ -9,19 +9,23 @@ div class="panel panel-default"
         tr
           th Id
           th Name
+          th Tag name
           th Picture
           th Position
-          th Hidden
+          th Show
+          th Description
           th Actions
       tbody
         - @advetisments.each do |ad|
           tr
             th scope="row" = link_to ad&.id, advetisment_path(ad&.id)
             td = ad&.name
+            td = @advetisment&.icon_name
             td = ad&.position
             td = image_tag(ad&.picture_url&.url, size: "80x80")
             td = ad&.position
             td = ad&.hidden_item ? "Yes" : "No"
+            td = @advetisment&.description
             td
               = link_to "Edit advetisment", edit_advetisment_path(ad), class: "btn btn-warning"
               | &emsp;

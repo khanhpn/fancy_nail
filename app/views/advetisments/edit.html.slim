@@ -1,21 +1,31 @@
 div class="panel panel-default"
   div class="panel-heading"
-    | Edit advetisment
+    h4 Update advetisment
     div class="panel-body"
-      - if @advetisments.errors.present?
-        p = @advetisments.errors.full_messages
-
-      = form_for @advetisments, as: :advetisments, url: category_path(@advetisments), method: :patch, html: {} do |f|
+      = form_for @advetisment, as: :advetisment, url: advetisment_path(@advetisment), method: :patch, html: {} do |f|
         table.table
           thead
             tr
               th Name
+              th Tag name
               th Position
-              th Action
+              th Show
+              th Picture
+              th Description
+              th Actions
           tbody
             tr
               td = f.text_field :name, class: "form-control"
+              td = f.text_field :icon_name, class: "form-control"
               td = f.text_field :position, class: "form-control"
+              td = f.select :hidden_item, [["Yes", true], ["No", false]], {prompt: "Hide or show"}, {class: "form-control", id: ""}
+              td
+                = image_tag @advetisment&.picture_url, size: "80x80"
+                = f.file_field :picture_url, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
+              td = f.text_area :description, class: "form-control", rows: "10"
               td = f.submit "Update", class: "btn btn-success"
 
-= link_to "Back", category_path(@advetisments), class: "btn btn-success"
+    br
+    div
+      = link_to "Back", advetisments_path, class: "btn btn-success"
+

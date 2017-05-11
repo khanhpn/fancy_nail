@@ -3,7 +3,7 @@
   <%= render partial: "layouts/shared/header_middle" %>
   <%= render partial: "layouts/shared/header_bottom" %>
 </header>
-<%= render partial: "layouts/shared/slider" %>
+<%= render partial: "layouts/shared/slider", locals: {advetistments: @advetistments} if @advetistments.present? %>
 <section>
     <div class="container">
       <div class="row">

@@ -7,6 +7,7 @@ class HomesController < ApplicationController
     @features = Product.feature.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
     @categories = Category.includes(:products)&.order(position: :desc)
     @recommends = Product.recommend.includes(:pictures, :category)&.order(created_at: :desc)
+    @advetistments = Advetisment.where(hidden_item: true)
   end
 
   def contact

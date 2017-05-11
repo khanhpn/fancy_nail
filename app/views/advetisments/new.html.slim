@@ -1,22 +1,26 @@
 div class="panel panel-default"
   div class="panel-heading"
-    | Create advetisment
+    h4 Create advetisment
     div class="panel-body"
       = form_for @advetisment, as: :advetisment, url: advetisments_path, method: :post, html: {} do |f|
         table.table
           thead
             tr
-              th Id
               th Name
-              th Picture
+              th Tag name
               th Position
               th Hidden
+              th Picture
+              th Description
               th Actions
           tbody
             tr
               td = f.text_field :name, class: "form-control"
-              td = f.select :hidden_item, [["Yes", true], ["No", false]], {prompt: "Select special"}, {class: "form-control", id: ""}
+              td = f.text_field :icon_name, class: "form-control"
+              td = f.text_field :position, class: "form-control"
+              td = f.select :hidden_item, [["Yes", true], ["No", false]], {prompt: "Hide or show"}, {class: "form-control", id: ""}
               td = f.file_field :picture_url, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
+              td = f.text_area :description, class: "form-control", rows: "10"
               td = f.submit "Create", class: "btn btn-success"
 
     br

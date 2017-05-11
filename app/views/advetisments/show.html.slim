@@ -1,2 +1,33 @@
-h1 Advetisments#show
-p Find me in app/views/advetisments/show.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Show advetisment
+    div class="panel-body"
+      table.table
+        thead
+          tr
+            th Name
+            th Tag name
+            th Position
+            th Show
+            th Picture
+            th Description
+            th Actions
+        tbody
+          tr
+            td = @advetisment&.name
+            td = @advetisment&.icon_name
+            td = @advetisment&.position
+            td = @advetisment&.hidden_item ? "Show" : "Hide"
+            td = image_tag @advetisment&.picture_url, size: "80x80"
+            td = @advetisment&.description
+            td
+              = link_to "Edit", edit_advetisment_path(@advetisment), class: "btn btn-success"
+              | &emsp;
+              = link_to "New", new_advetisment_path, class: "btn btn-success"
+              | &emsp;
+              = link_to "Delete advetisment", advetisment_path(@advetisment), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+
+    br
+    div
+      = link_to "Back", advetisments_path, class: "btn btn-success"
+
