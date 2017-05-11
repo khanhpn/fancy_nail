@@ -4,7 +4,7 @@
       <div class="col-sm-12">
         <div id="slider-carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <% (0..advetistments.size).each do |item| %>
+            <% (0...advetistments.size).each do |item| %>
               <li data-target="#slider-carousel" data-slide-to="<%= item %>" class="<%= item == 0 ? 'active' : nil %>"></li>
             <% end %>
           </ol>
@@ -19,8 +19,7 @@
                   <button type="button" class="btn btn-default get">Get it now</button>
                 </div>
                 <div class="col-sm-6">
-                  <%= image_tag "home/girl1.jpg", class: "girl img-responsive" %>
-                  <%= image_tag "home/pricing.png", class: "pricing" %>
+                  <%= image_tag advetistment&.picture_url, class: "girl img-responsive" %>
                 </div>
               </div>
             <% end %>
