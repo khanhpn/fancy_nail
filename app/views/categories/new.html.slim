@@ -10,10 +10,12 @@ div class="panel panel-default"
           thead
             tr
               th Name
+              th Position
               th Action
           tbody
             tr
               td = f.text_field :name, class: "form-control"
+              td = f.text_field :position, class: "form-control"
               td = f.submit "Create", class: "btn btn-success"
 
 = link_to "Back", categories_path, class: "btn btn-warning"

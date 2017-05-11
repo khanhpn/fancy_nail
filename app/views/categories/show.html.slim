@@ -9,12 +9,14 @@ div class="panel panel-default"
         tr
           th Id
           th Name
+          th Position
           th Created at
           th Updated at
       tbody
         tr
           th scope="row" = @category&.id
           td = @category&.name
+          td = @category&.position
           td = @category&.created_at
           td = @category&.updated_at
   div

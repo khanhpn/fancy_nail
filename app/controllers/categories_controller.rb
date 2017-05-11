@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   before_action :set_params, only: [:create, :update]
 
   def index
-    @categories = Category.all.order(created_at: :desc).page(params[:page])
+    @categories = Category.all.order(position: :desc).page(params[:page])
   end
 
   def new
@@ -26,6 +26,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(set_params)
+    @category.position = set_params[:position].to_i
     if @category.save
       redirect_to category_path(@category)
     else
@@ -35,6 +36,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category.assign_attributes(set_params)
+    @category.position = set_params[:position].to_i
     if @category.save
       redirect_to category_path(@category), notice: "You updated this category successfully"
     else
@@ -49,6 +51,6 @@ class CategoriesController < ApplicationController
   end
 
   def set_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :position)
   end
 end

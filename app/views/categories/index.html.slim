@@ -9,12 +9,14 @@ div class="panel panel-default"
         tr
           th Id
           th Name
+          th Position
           th Actions
       tbody
         - @categories.each do |cat|
           tr
             th scope="row" = link_to cat&.id, category_path(cat&.id)
             td = cat&.name
+            td = cat&.position
             td
               = link_to "Edit category", edit_category_path(cat), class: "btn btn-warning"
               | &emsp;
