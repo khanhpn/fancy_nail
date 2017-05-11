@@ -41,7 +41,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @product.pictures.build
+  end
 
   def show; end
 

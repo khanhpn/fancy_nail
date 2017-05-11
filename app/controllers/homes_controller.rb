@@ -16,4 +16,8 @@ class HomesController < ApplicationController
       type: "application/pdf"
     )
   end
+
+  def policy; end
+
+  def term_of_use; end
 end

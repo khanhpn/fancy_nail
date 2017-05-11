@@ -1,6 +1,6 @@
 div class="panel panel-default"
   div class="panel-heading"
-    | Create product
+    h4 Update product
     div class="panel-body"
       - if @product.errors.present?
         p = @product.errors.full_messages
@@ -14,7 +14,8 @@ div class="panel panel-default"
               th Description
               th Category
               td Feature
-              th Picture
+              th Current Picture
+              th Update picture
               th Action
           tbody
             tr
@@ -24,8 +25,8 @@ div class="panel panel-default"
               td = f.select :category_id, options_for_select(Category.all.pluck(:name, :id), selected: @product&.category_id), {prompt: "Select special"}, {class: "form-control", id: ""}
               td
                 = f.select :special, Product.specials.to_a, {prompt: "Select special"}, {class: "form-control", id: ""}
+              td = default_image?(@product&.pictures&.first&.url_picture)
               td
-                = default_image?(@product&.pictures&.first&.url_picture)
                 = f.fields_for :pictures do |pic|
                   = pic.file_field :url_picture, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
               td = f.submit "Update", class: "btn btn-success"
