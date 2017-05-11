@@ -93,18 +93,21 @@
             <div class="tab-content">
               <% @categories.each_with_index do |cat, index| %>
                 <div class="tab-pane fade <%= index == 0 ? 'active' : nil %> in" id="<%= cat.slug %>" >
-                  <% cat&.products.each do |pro| %>
-                  <div class="col-sm-3">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <%# default_image?(pro&.pictures&.first&.url_picture) %>
-                          <p><%= pro&.name %></p>
-                          <p><%= pro&.price %></p>
+                  <% cat&.products.each_slice(4) do |product| %>
+                    <div class="row">
+                      <% product.each do |pro| %>
+                        <div class="col-sm-3">
+                          <div class="product-image-wrapper">
+                            <div class="single-products">
+                              <div class="productinfo text-center">
+                                <h4><%= pro&.name %></h4>
+                                <p><%= pro&.price %></p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      <% end %>
                     </div>
-                  </div>
                   <% end %>
                 </div>
               <% end %>
