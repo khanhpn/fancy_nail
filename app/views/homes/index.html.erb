@@ -3,20 +3,8 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="left-sidebar">
-            <h2>Services</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-              <% @categories.each do |cat| %>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                        <span class="badge pull-right"><%= cat&.products&.size %></span>
-                        <%= cat.name %>
-                      </a>
-                    </h4>
-                  </div>
-                </div>
-              <% end %>
+
             </div><!--/category-products-->
 
             <div class="brands_products"><!--brands_products-->
@@ -51,7 +39,7 @@
 
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Features Items</h2>
+            <h2 class="title text-center">Services</h2>
             <% @features.each do |feature| %>
               <div class="col-sm-4">
                 <div class="product-image-wrapper">
@@ -97,13 +85,8 @@
                     <div class="row">
                       <% product.each do |pro| %>
                         <div class="col-sm-3">
-                          <div class="product-image-wrapper">
-                            <div class="single-products">
-                              <div class="productinfo text-center">
-                                <h4><%= pro&.name %></h4>
-                                <p><%= pro&.price %></p>
-                              </div>
-                            </div>
+                          <div class="productinfo text-center">
+                            <p class="title-color"><%= pro&.name %><br><%= pro&.price %></p>
                           </div>
                         </div>
                       <% end %>
