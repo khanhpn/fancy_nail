@@ -2,32 +2,6 @@ div class="panel panel-default"
   div class="panel-heading"
     | Create advetisment
     div class="panel-body"
-      - if @advetisment.errors.present?
-        p = @advetisment.errors.full_messages
-
-      = form_for @advetisment, as: :advetisment, url: advetisments_path, method: :post, html: {} do |f|
-        table.table
-          thead
-            tr
-              th Name
-              th Price
-              th Description
-              th Category
-              td Feature
-              th Picture
-              th Action
-          tbody
-            tr
-              td = f.text_field :name, class: "form-control"
-              td = f.select :hidden_item, [["Yes", true], ["No", false]], {prompt: "Select special"}, {class: "form-control", id: ""}
-              td = f.file_field :picture_url, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
-              td = f.submit "Create", class: "btn btn-success"
-
-
-div class="panel panel-default"
-  div class="panel-heading"
-    | Create advetisment
-    div class="panel-body"
       = form_for @advetisment, as: :advetisment, url: advetisments_path, method: :post, html: {} do |f|
         table.table
           thead
@@ -39,6 +13,11 @@ div class="panel panel-default"
               th Hidden
               th Actions
           tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.select :hidden_item, [["Yes", true], ["No", false]], {prompt: "Select special"}, {class: "form-control", id: ""}
+              td = f.file_field :picture_url, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
+              td = f.submit "Create", class: "btn btn-success"
 
     br
     div
