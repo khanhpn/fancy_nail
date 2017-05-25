@@ -8,99 +8,16 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
             </div>
           </div> -->
-          <div class="col-sm-9">
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe1.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
+          <div class="col-sm-12">
+            <% @videos.each do |video| %>
+              <div class="col-sm-3">
+                <div class="video-gallery text-center">
+                  <a href="#"><%= youtube_video(video.url_video) %></a>
+                  <p><%= video&.name %></p>
+                  <h2><%= video&.updated_at.strftime("%Y/%m/%d") %></h2>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe4.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe2.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe3.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
-              </div>
-            </div>
-
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe4.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="video-gallery text-center">
-                <a href="#">
-                  <div class="iframe-img">
-                    <%= image_tag "home/iframe4.png" %>
-                  </div>
-                  <div class="overlay-icon">
-                    <i class="fa fa-play-circle-o"></i>
-                  </div>
-                </a>
-                <p>Circle of Hands</p>
-                <h2>24 DEC 2014</h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="address">
-              <%= link_to image_tag("home/map.png"), contact_path %>
-              <p class="txt-center">Sunshine Square Plaza 510 E. Woolbright Road Boynton Beach, FL 33435</p>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
