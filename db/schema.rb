@@ -79,11 +79,13 @@ ActiveRecord::Schema.define(version: 20170525124411) do
     t.string   "name"
     t.text     "url_video"
     t.text     "description"
-    t.boolean  "hide",        default: true
-    t.integer  "position",    default: 0
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "hide",                    default: true
+    t.integer  "position",                default: 0
+    t.string   "slug",        limit: 250
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["hide"], name: "index_videos_on_hide", using: :btree
+    t.index ["slug"], name: "index_videos_on_slug", using: :btree
   end
 
 end

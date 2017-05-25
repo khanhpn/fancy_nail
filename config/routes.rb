@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'videos/index'
-
-  get 'videos/new'
-
-  get 'videos/edit'
-
-  get 'videos/show'
 
   root :to => 'homes#index'
   resources :products, only: [:edit, :update, :destroy, :index, :show]
@@ -15,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :advetisments
+  resources :videos
   get 'search'    => "search#index"
   get "download"  => "homes#download"
   get 'policy'    => "homes#policy"

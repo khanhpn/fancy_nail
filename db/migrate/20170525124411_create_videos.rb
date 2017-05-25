@@ -6,6 +6,7 @@ class CreateVideos < ActiveRecord::Migration[5.0]
       t.text :description
       t.boolean :hide, default: true, index: true
       t.integer :position, default: 0
+      t.string :slug, index: true, unique: true, limit: 250
 
       t.timestamps
     end

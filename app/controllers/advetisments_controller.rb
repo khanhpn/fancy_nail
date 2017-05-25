@@ -1,6 +1,7 @@
 class AdvetismentsController < ApplicationController
   layout 'admin'
 
+  before_action :basic_authentication
   before_action :set_params, only: [:create, :update]
   before_action :set_advetisment, only: [:edit, :show, :destroy, :update]
 
