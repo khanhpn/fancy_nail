@@ -33,4 +33,7 @@ class HomesController < ApplicationController
 
   def event
   end
+
+  def about
+  end
 end
