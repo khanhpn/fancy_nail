@@ -15,4 +15,12 @@ class ShopGoogleMap
       zoom: 15
     }
     map = new google.maps.Map(document.getElementById("id_google_map"), mapProp)
-    marker = new google.maps.Marker({position: latlon, map: map, title: "You are here!"})
+    marker = new google.maps.Marker({
+      position: latlon,
+      map: map,
+      title: "Fancy Nails",
+      url: "https://www.google.com/maps/place/Fancy+Nails+of+Sunshine+Square/@26.5141244,-80.0613791,15z/data=!4m5!3m4!1s0x0:0x33b2c700c082fa06!8m2!3d26.5141244!4d-80.0613791"
+    })
+    google.maps.event.addListener marker, 'click', () ->
+      window.location.href = marker.url
+
