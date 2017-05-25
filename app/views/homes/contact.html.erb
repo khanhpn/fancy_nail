@@ -1,2 +1,52 @@
-<h1>Homes#contact</h1>
-<p>Find me in app/views/homes/contact.html.erb</p>
+<header id="header"><!--header-->
+  <%= render partial: "layouts/shared/header_top" %>
+  <%= render partial: "layouts/shared/header_middle" %>
+  <%= render partial: "layouts/shared/header_bottom" %>
+</header>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXv5hNFO-T918Js8r3eOQx5z-fKoTa7xw"></script>
+<section>
+<div id="contact-page" class="container">
+      <div class="bg">
+        <div class="row">
+          <div class="col-sm-12">
+          <h2 class="title text-center">Store <strong>Location</strong></h2>
+          <div id="id_google_map" class="contact-map">
+          </div>
+          <%= hidden_field_tag "shop_latitude", "26.515200", id: "id_shop_latitude" %>
+          <%= hidden_field_tag "shop_longitude", "-80.061443", id: "id_shop_longitude" %>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-info">
+              <h2 class="title text-center">Contact Info</h2>
+              <address>
+                <p>Fancy Nails</p>
+              <p>Sunshine Square Plaza 510 E. Woolbright Road Boynton Beach, FL 33435</p>
+              <p>Florida USA</p>
+              <p>Phone: (561) 737-8081</p>
+              <p>Email: info@e-shopper.com</p>
+              </address>
+              <div class="social-networks">
+                <h2 class="title text-center">Social Networking</h2>
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/#contact-page-->
+</section>
