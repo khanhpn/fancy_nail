@@ -5,7 +5,7 @@ div class="panel panel-default"
       - if @video.errors.present?
         p = @video.errors.full_messages
 
-      = form_for @video, as: :product, url: video_path(@video), method: :patch, html: {} do |f|
+      = form_for @video, as: :video, url: video_path(@video), method: :patch, html: {} do |f|
         table.table
           thead
             tr
