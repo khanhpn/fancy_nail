@@ -22,6 +22,9 @@ div class="panel panel-default"
           th Category name
           td = @product&.category&.name
         tr
+          th Group
+          td = @product&.group_product
+        tr
           th Special
           td = Product.specials[@product.special]
         tr

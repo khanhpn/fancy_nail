@@ -13,6 +13,7 @@ div class="panel panel-default"
           th Price
           th Image
           th Category
+          th Group
           th Actions
       tbody
         - @products.each do |pro|
@@ -23,6 +24,7 @@ div class="panel panel-default"
             td = pro&.price
             td = default_image?(pro&.pictures&.first&.url_picture)
             td = pro&.category&.name
+            td = pro&.group_product
             td
               = link_to "Edit product", edit_product_path(pro), class: "btn btn-warning"
               | &emsp;

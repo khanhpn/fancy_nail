@@ -15,6 +15,7 @@ div class="panel panel-default"
               th Category
               td Feature
               th Picture
+              th Group
               th Action
           tbody
             tr
@@ -27,6 +28,7 @@ div class="panel panel-default"
               td
                 = f.fields_for :pictures do |pic|
                   = pic.file_field :url_picture, multiple: false, class: "form-control", accept: "image/jpeg, image/jpg, image/gif, image/png"
+              td = f.select :group_product, (0..100).to_a, {prompt: "Select group"}, {class: "form-control"}
               td = f.submit "Create", class: "btn btn-success"
 
 = link_to "Back", products_path, class: "btn btn-success"

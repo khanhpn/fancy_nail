@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to product_path(@product), notice: "You updated product successfully."
     else
+      flash[:error] = "You can't update this product."
       render :edit
     end
   end
@@ -62,6 +63,6 @@ class ProductsController < ApplicationController
   end
 
   def set_params
-    params.require(:product).permit(:name, :description, :price, :category_id, :special, :pictures_attributes => [:id, :url_picture])
+    params.require(:product).permit(:name, :description, :price, :category_id, :special, :group_product, :pictures_attributes => [:id, :url_picture])
   end
 end
