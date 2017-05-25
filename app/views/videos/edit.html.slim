@@ -1,2 +1,29 @@
-h1 Videos#edit
-p Find me in app/views/videos/edit.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Update video
+    div class="panel-body"
+      - if @video.errors.present?
+        p = @video.errors.full_messages
+
+      = form_for @video, as: :product, url: video_path(@video), method: :patch, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Description
+              th Current video
+              td New video
+              th hide
+              th position
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_area :description, class: "form-control", size: "10x10"
+              td = youtube_video(@video&.url_video)
+              td = f.file_field :url_video, multiple: false, class: "form-control"
+              td = f.select :hide, [[true, "Hide video"], [false, "Show video"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.text_field :position, class: "form-control"
+              td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", videos_path, class: "btn btn-success"

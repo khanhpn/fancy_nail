@@ -1,2 +1,34 @@
-h1 Videos#index
-p Find me in app/views/videos/index.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    | List videos
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th id
+          th Name
+          th Description
+          th Current video
+          th hide
+          th position
+          th Action
+      tbody
+        - @videos.each do |video|
+          tr
+            th scope="row" = link_to video&.id, video_path(video&.id)
+            td = video&.name
+            td = video&.description
+            td = youtube_video(video&.url_video)
+            td = video&.hide
+            td = video&.position
+            td
+              = link_to "Edit video", edit_video_path(video), class: "btn btn-warning"
+              | &emsp;
+              = link_to "Delete video", video_path(video), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+              | &emsp;
+              = link_to "Show video", video_path(video), class: "btn btn-success"
+    = paginate @videos
+  div
+    = link_to "New video", new_video_path, class: "btn btn-success"

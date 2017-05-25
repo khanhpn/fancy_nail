@@ -1,2 +1,27 @@
-h1 Videos#show
-p Find me in app/views/videos/show.html.slim
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Show video
+    div class="panel-body"
+      - if @video.errors.present?
+        p = @video.errors.full_messages
+      table.table
+        thead
+          tr
+            th Name
+            th Description
+            td video
+            th hide
+            th position
+        tbody
+          tr
+            td = @video&.name
+            td = @video&.description
+            td = youtube_video(@video&.url_video)
+            td = @video&.hide
+            td = @video&.position
+
+= link_to "Back", videos_path, class: "btn btn-success"
+| &emsp;
+= link_to "Edit", edit_video_path(@video), class: "btn btn-success"
+| &emsp;
+= link_to "Delete", video_path(@video), class: "btn btn-success", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
