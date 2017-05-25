@@ -27,4 +27,10 @@ class HomesController < ApplicationController
 
   def admin
   end
+
+  def store_location
+  end
+
+  def event
+  end
 end
