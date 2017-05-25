@@ -1,8 +1,9 @@
 $ ->
   googleMapShop = new ShopGoogleMap
-  lat = Number($("#id_shop_latitude").val())
-  lon = Number($("#id_shop_longitude").val())
-  googleMapShop.drawMap(lat, lon) if lat.length != undefined
+  lat = if $("#id_shop_latitude").length > 0 then Number($("#id_shop_latitude").val()) else 0
+  lon = if $("#id_shop_latitude").length > 0 then Number($("#id_shop_longitude").val()) else 0
+
+  googleMapShop.drawMap(lat, lon)
 
 
 class ShopGoogleMap
