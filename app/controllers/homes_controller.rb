@@ -8,7 +8,7 @@ class HomesController < ApplicationController
     @categories = Category.includes(:products)&.order(position: :desc)
     @recommends = Product.recommend.includes(:pictures, :category)&.order(created_at: :desc)
     @advetistments = Advetisment.where(hidden_item: true)
-    @videos = Video.all.order(:position)
+    @videos = Video.all.order(:position)&.take(4)
   end
 
   def contact

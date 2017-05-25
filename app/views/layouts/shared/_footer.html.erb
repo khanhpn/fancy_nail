@@ -9,14 +9,16 @@
             </div>
           </div> -->
           <div class="col-sm-12">
-            <% @videos.each do |video| %>
-              <div class="col-sm-3">
-                <div class="video-gallery text-center">
-                  <a href="#"><%= youtube_video(video.url_video) %></a>
-                  <p><%= video&.name %></p>
-                  <h2><%= video&.updated_at.strftime("%Y/%m/%d") %></h2>
+            <% if @videos.present? %>
+              <% @videos.each do |video| %>
+                <div class="col-sm-3">
+                  <div class="video-gallery text-center">
+                    <a href="#"><%= youtube_video(video.url_video) %></a>
+                    <p><%= video&.name %></p>
+                    <h2><%= video&.updated_at.strftime("%Y/%m/%d") %></h2>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
