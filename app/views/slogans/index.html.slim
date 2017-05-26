@@ -1,0 +1,30 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | List slogans
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th id
+          th Name
+          th Description
+          th hide
+          th Action
+      tbody
+        - @slogans.each do |slogan|
+          tr
+            th scope="row" = link_to slogan&.id, slogan_path(slogan&.id)
+            td = slogan&.name
+            td = slogan&.description
+            td = slogan&.hide
+            td
+              = link_to "Edit slogan", edit_slogan_path(slogan), class: "btn btn-warning"
+              | &emsp;
+              = link_to "Delete slogan", slogan_path(slogan), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+              | &emsp;
+              = link_to "Show slogan", slogan_path(slogan), class: "btn btn-success"
+    = paginate @slogans
+  div
+    = link_to "New slogan", new_slogan_path, class: "btn btn-success"

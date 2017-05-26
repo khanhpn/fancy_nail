@@ -1,0 +1,23 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Show slogan
+    div class="panel-body"
+      - if @slogan.errors.present?
+        p = @slogan.errors.full_messages
+      table.table
+        thead
+          tr
+            th Name
+            th Description
+            th hide
+        tbody
+          tr
+            td = @slogan&.name
+            td = @slogan&.description
+            td = @slogan&.hide
+
+= link_to "Back", slogans_path, class: "btn btn-success"
+| &emsp;
+= link_to "Edit", edit_slogan_path(@slogan), class: "btn btn-success"
+| &emsp;
+= link_to "Delete", slogan_path(@slogan), class: "btn btn-success", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }

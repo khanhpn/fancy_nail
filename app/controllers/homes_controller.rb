@@ -9,6 +9,7 @@ class HomesController < ApplicationController
     @advetistments = Advetisment.all
     @videos = Video.where(hide: false).order(:position)&.take(4)
     @events = Event.where(hide: false).order(:updated_at)&.take(4)
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
   end
 
   def contact

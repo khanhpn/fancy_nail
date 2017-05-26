@@ -1,0 +1,23 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Update slogan
+    div class="panel-body"
+      - if @slogan.errors.present?
+        p = @slogan.errors.full_messages
+
+      = form_for @slogan, as: :slogan, url: slogan_path(@slogan), method: :patch, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Description
+              th hide
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_area :description, class: "form-control", size: "10x10"
+              td = f.select :hide, [[true, "Hide slogan"], [false, "Show slogan"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", slogans_path, class: "btn btn-success"

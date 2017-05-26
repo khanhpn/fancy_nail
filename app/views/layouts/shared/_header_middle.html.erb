@@ -3,35 +3,26 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="logo pull-left">
-              <%= link_to image_tag("home/logo.png"), root_path %>
+              Fancy NAILS
             </div>
             <div class="btn-group pull-right">
               <div class="btn-group">
-                <!-- <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                  USA
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Canada</a></li>
-                  <li><a href="#">UK</a></li>
-                </ul> -->
+                Sunshine Square Plaza 510 E. Woolbright Road Boynton Beach, FL 33435
               </div>
-
               <div class="btn-group">
-                <!-- <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                  DOLLAR
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Canadian Dollar</a></li>
-                  <li><a href="#">Pound</a></li>
-                </ul> -->
+                <p>
+                  Hours: <br>
+                  &emsp;Monday-Friday: 8:30AM-7:00PM <br>
+                  &emsp;Saturday: 8:30AM-5:00PM <br>
+                  &emsp;Sunday: Closed
+                </p>
               </div>
             </div>
           </div>
           <div class="col-sm-8">
             <div class="shop-menu pull-right">
               <ul class="nav navbar-nav">
+                <p class="slogan"><%= slogan.description.gsub(/\r\n/, "<br>").html_safe %></p>
                 <!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li> -->
                 <!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
                 <!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
