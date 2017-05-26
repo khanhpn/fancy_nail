@@ -44,6 +44,7 @@
         </div>
 
         <div class="col-sm-9 padding-right">
+          <%= render partial: "layouts/shared/event", locals: {events: @events} if @events.present? %>
           <div class="features_items"><!--features_items-->
             <h2 class="title text-center">Services</h2>
             <% @features.each do |feature| %>

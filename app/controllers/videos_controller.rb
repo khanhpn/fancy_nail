@@ -26,6 +26,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(set_params)
+    @video.hide = set_params[:hide] == "true" ? true : false
     @video.position = set_params[:position].to_i
     if @video.save
       redirect_to video_path(@video)
@@ -36,6 +37,7 @@ class VideosController < ApplicationController
 
   def update
     @video.assign_attributes(set_params)
+    @video.hide = set_params[:hide] == "true" ? true : false
     @video.position = set_params[:position].to_i
     if @video.save
       redirect_to video_path(@video), notice: "You updated this video successfully"

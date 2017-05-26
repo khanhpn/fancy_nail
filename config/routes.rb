@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :advetisments
   resources :videos
+  resources :events
   get 'search'    => "search#index"
   get "download"  => "homes#download"
   get 'policy'    => "homes#policy"

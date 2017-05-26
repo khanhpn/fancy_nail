@@ -17,9 +17,10 @@ class AdvetismentsController < ApplicationController
   end
 
   def create
-    advetisment = Advetisment.new(set_params)
-    if advetisment.save
-      redirect_to advetisment_path(advetisment), notice: "You created advetisment successfully."
+    @advetisment = Advetisment.new(set_params)
+    @advetisment.hidden_item = set_params[:hidden_item] == "true" ? true : false
+    if @advetisment.save
+      redirect_to advetisment_path(@advetisment), notice: "You created advetisment successfully."
     else
       render :edit
     end
@@ -30,6 +31,7 @@ class AdvetismentsController < ApplicationController
 
   def update
     @advetisment.assign_attributes(set_params)
+    @advetisment.hidden_item = set_params[:hidden_item] == "true" ? true : false
     if @advetisment.save
       redirect_to advetisment_path(@advetisment), notice: "You updated advetisment successfully."
     else

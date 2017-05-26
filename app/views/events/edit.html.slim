@@ -1,0 +1,25 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    h4 Update event
+    div class="panel-body"
+      - if @event.errors.present?
+        p = @event.errors.full_messages
+
+      = form_for @event, as: :event, url: event_path(@event), method: :patch, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Name
+              th Description
+              th hide
+              th position
+              th Action
+          tbody
+            tr
+              td = f.text_field :name, class: "form-control"
+              td = f.text_area :description, class: "form-control", size: "10x10"
+              td = f.select :hide, [[true, "Hide event"], [false, "Show event"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.text_field :position, class: "form-control"
+              td = f.submit "Update", class: "btn btn-success"
+
+= link_to "Back", events_path, class: "btn btn-success"

@@ -1,0 +1,8 @@
+<div class="recommended_items"><!--recommended_items-->
+  <h2 class="title text-center">events</h2>
+  <% events.each do |event| %>
+    <div class="col-sm-12">
+      <p class="decorate-event"><%= event.description.html_safe  %></p>
+    </div>
+  <% end %>
+</div><!--/recommended_items-->

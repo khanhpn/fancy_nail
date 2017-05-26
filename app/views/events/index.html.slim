@@ -1,0 +1,32 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | List events
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th id
+          th Name
+          th Description
+          th hide
+          th position
+          th Action
+      tbody
+        - @events.each do |event|
+          tr
+            th scope="row" = link_to event&.id, event_path(event&.id)
+            td = event&.name
+            td = event&.description
+            td = event&.hide
+            td = event&.position
+            td
+              = link_to "Edit event", edit_event_path(event), class: "btn btn-warning"
+              | &emsp;
+              = link_to "Delete event", event_path(event), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+              | &emsp;
+              = link_to "Show event", event_path(event), class: "btn btn-success"
+    = paginate @events
+  div
+    = link_to "New event", new_event_path, class: "btn btn-success"
