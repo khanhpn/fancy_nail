@@ -13,6 +13,7 @@ class HomesController < ApplicationController
   end
 
   def contact
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
   end
 
   def download
@@ -23,19 +24,25 @@ class HomesController < ApplicationController
     )
   end
 
-  def policy; end
+  def policy;
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
+  end
 
-  def term_of_use; end
+  def term_of_use
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
+  end
 
   def admin
   end
 
   def store_location
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
   end
 
   def event
   end
 
   def about
+    @slogan = Slogan.where(hide: false).order(:updated_at)&.first
   end
 end

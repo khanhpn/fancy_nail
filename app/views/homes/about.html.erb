@@ -1,6 +1,6 @@
 <header id="header"><!--header-->
   <%= render partial: "layouts/shared/header_top" %>
-  <%= render partial: "layouts/shared/header_middle" %>
+  <%= render partial: "layouts/shared/header_middle", locals: {slogan: @slogan} %>
   <%= render partial: "layouts/shared/header_bottom" %>
 </header>
 <section>
