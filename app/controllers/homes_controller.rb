@@ -6,7 +6,6 @@ class HomesController < ApplicationController
     @newests = Product.newest.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
     @features = Product.feature.includes(:pictures, :category)&.order(created_at: :desc)&.take(9)
     @categories = Category.includes(:products)&.order(position: :desc)
-    @recommends = Product.recommend.includes(:pictures, :category)&.order(created_at: :desc)
     @advetistments = Advetisment.all
     @videos = Video.where(hide: false).order(:position)&.take(4)
     @events = Event.where(hide: false).order(:updated_at)&.take(4)
