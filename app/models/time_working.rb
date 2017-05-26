@@ -1,0 +1,2 @@
+class TimeWorking < ApplicationRecord
+end
