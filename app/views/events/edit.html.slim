@@ -18,7 +18,7 @@ div class="panel panel-default"
             tr
               td = f.text_field :name, class: "form-control"
               td = f.text_area :description, class: "form-control", size: "10x10"
-              td = f.select :hide, [[true, "Hide event"], [false, "Show event"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.select :hide, [["Hide event", true], ["Show event", false]], {prompt: "Select group"}, {class: "form-control"}
               td = f.text_field :position, class: "form-control"
               td = f.submit "Update", class: "btn btn-success"
 

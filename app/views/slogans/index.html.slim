@@ -18,7 +18,7 @@ div class="panel panel-default"
             th scope="row" = link_to slogan&.id, slogan_path(slogan&.id)
             td = slogan&.name
             td = slogan&.description
-            td = slogan&.hide
+            td = slogan&.hide == true ? "Hide slogan" : "Show slogan"
             td
               = link_to "Edit slogan", edit_slogan_path(slogan), class: "btn btn-warning"
               | &emsp;

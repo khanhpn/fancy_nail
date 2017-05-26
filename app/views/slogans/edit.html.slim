@@ -17,7 +17,7 @@ div class="panel panel-default"
             tr
               td = f.text_field :name, class: "form-control"
               td = f.text_area :description, class: "form-control", size: "10x10"
-              td = f.select :hide, [[true, "Hide slogan"], [false, "Show slogan"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.select :hide, [["Hide slogan", true], ["Show slogan", false]], {prompt: "Select group"}, {class: "form-control"}
               td = f.submit "Update", class: "btn btn-success"
 
 = link_to "Back", slogans_path, class: "btn btn-success"

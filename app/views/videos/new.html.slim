@@ -20,7 +20,7 @@ div class="panel panel-default"
               td = f.text_field :name, class: "form-control"
               td = f.text_area :description, class: "form-control", size: "10x10"
               td = f.text_field :url_video, class: "form-control"
-              td = f.select :hide, [[true, "Hide video"], [false, "Show video"]], {prompt: "Select group"}, {class: "form-control"}
+              td = f.select :hide, [["Hide video", true], ["Show video", false]], {prompt: "Select group"}, {class: "form-control"}
               td = f.text_field :position, class: "form-control"
               td = f.submit "Create", class: "btn btn-success"
 

@@ -19,7 +19,7 @@ div class="panel panel-default"
             th scope="row" = link_to event&.id, event_path(event&.id)
             td = event&.name
             td = event&.description
-            td = event&.hide
+            td = event&.hide == true ? "Hide event" : "Show event"
             td = event&.position
             td
               = link_to "Edit event", edit_event_path(event), class: "btn btn-warning"

@@ -15,7 +15,7 @@ div class="panel panel-default"
           tr
             td = @event&.name
             td = @event&.description
-            td = @event&.hide
+            td = @event&.hide == true ? "Hide event" : "Show event"
             td = @event&.position
 
 = link_to "Back", events_path, class: "btn btn-success"

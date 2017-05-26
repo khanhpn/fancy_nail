@@ -21,7 +21,7 @@ div class="panel panel-default"
             td = video&.name
             td = video&.description
             td = youtube_video(video&.url_video)
-            td = video&.hide
+            td = video&.hide == true ? "Hide video" : "Show video"
             td = video&.position
             td
               = link_to "Edit video", edit_video_path(video), class: "btn btn-warning"

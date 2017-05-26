@@ -14,7 +14,7 @@ div class="panel panel-default"
           tr
             td = @slogan&.name
             td = @slogan&.description
-            td = @slogan&.hide
+            td = @slogan&.hide == true ? "Hide slogan" : "Show slogan"
 
 = link_to "Back", slogans_path, class: "btn btn-success"
 | &emsp;
