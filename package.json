@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "zepto": "^1.2.0"
   }
 }
