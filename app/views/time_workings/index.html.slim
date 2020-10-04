@@ -8,12 +8,16 @@ div class="panel panel-default"
       thead
         tr
           th Address
-          th Information
-          th Actions
+          th Time information
+          th Copy Write
+          th Contact info
+          th Action
       tbody
         tr
           td = simple_format(@information&.address)
           td = simple_format(@information&.information_time)
+          td = simple_format(@information&.copywrite)
+          td = simple_format(@information&.contact_info)
           td 
 						- if @information.present?
 							= link_to "Edit information", edit_time_working_path(@information), class: "btn btn-warning"

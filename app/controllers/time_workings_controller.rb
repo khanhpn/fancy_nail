@@ -37,6 +37,6 @@ class TimeWorkingsController < ApplicationController
   end
 
   def set_params
-    params.require(:information).permit(:address, :information_time)
+    params.require(:information).permit(:address, :information_time, :copywrite, :contact_info)
   end
 end
