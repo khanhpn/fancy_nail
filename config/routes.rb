@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :videos
   resources :events
   resources :slogans
+  resources :time_workings
   get 'search'    => "search#index"
   get "download"  => "homes#download"
   get 'policy'    => "homes#policy"

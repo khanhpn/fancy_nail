@@ -7,15 +7,11 @@
             </div>
             <div class="btn-group pull-right">
               <div class="btn-group">
-                Sunshine Square Plaza 564 E. Woolbright Road Boynton Beach, FL 33435
+                <%= simple_format(information&.address) %>
               </div>
-              <div class="btn-group">
-                <p>
-                  Hours: <br>
-                  &emsp;Monday-Friday: 8:30AM - 7:00PM <br>
-                  &emsp;Saturday: 8:30AM - 6:00PM <br>
-                  &emsp;Sunday: 11:00 AM - 5:00 PM
-                </p>
+              <div class="btn-group wrap-address">
+                <div>Hours:</div>
+                <div class="wrap-information"><%= simple_format(information&.information_time) %></div>
               </div>
             </div>
           </div>

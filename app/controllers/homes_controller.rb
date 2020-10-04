@@ -10,6 +10,7 @@ class HomesController < ApplicationController
     @videos = Video.where(hide: false).order(:position)&.take(4)
     @events = Event.where(hide: false).order(:updated_at)&.take(4)
     @slogan = Slogan.where(hide: false).order(:updated_at)&.first
+    @information = TimeWorking.first
   end
 
   def contact

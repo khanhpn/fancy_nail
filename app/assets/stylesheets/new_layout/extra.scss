@@ -4,7 +4,7 @@
 .space-group {
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 1px solid currentColor
+  border: 1px solid currentColor;
 }
 .txt-center {
   text-align: center;
@@ -18,12 +18,18 @@
 }
 .slogan {
   font-weight: bold;
-  font-family: nimbus-sans-tw01con,sans-serif;
-  color: #F73176;
+  font-family: nimbus-sans-tw01con, sans-serif;
+  color: #f73176;
 }
 .brochure {
   width: 100%;
 }
 .bg-header-middle {
   background-color: lightgreen;
+}
+.wrap-address {
+  margin-top: -10px;
+}
+.wrap-information {
+  padding-left: 14px;
 }

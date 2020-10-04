@@ -1,0 +1,22 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Setting information
+    div class="panel-body"
+      p
+
+    table.table
+      thead
+        tr
+          th Address
+          th Information
+          th Actions
+      tbody
+        tr
+          td = simple_format(@information&.address)
+          td = simple_format(@information&.information_time)
+          td 
+						- if @information.present?
+							= link_to "Edit information", edit_time_working_path(@information), class: "btn btn-warning"
+						- else
+							= link_to "Create information", new_time_working_path, class: "btn btn-primary"
+					

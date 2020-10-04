@@ -1,0 +1,21 @@
+div class="panel panel-default"
+  div class="panel-heading"
+    | Create information
+    div class="panel-body"
+      - if @information.errors.present?
+        p = @information.errors.full_messages
+
+      = form_for @information, as: :information, url: time_workings_path(@information), method: :post, html: {} do |f|
+        table.table
+          thead
+            tr
+              th Address
+              th Time information
+              th Action
+          tbody
+            tr
+              td = f.text_area :address, class: "form-control", size: "10x10"
+              td = f.text_area :information_time, class: "form-control", size: "10x10"
+              td = f.submit "Create", class: "btn btn-success"
+
+= link_to "Back", time_workings_path, class: "btn btn-success"
