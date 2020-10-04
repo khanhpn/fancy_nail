@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   before_action :basic_authentication, only: [:admin]
+  before_action :information, except: [:download]
   layout 'admin', only: [:admin]
 
   def index
@@ -10,7 +11,6 @@ class HomesController < ApplicationController
     @videos = Video.where(hide: false).order(:position)&.take(4)
     @events = Event.where(hide: false).order(:updated_at)&.take(4)
     @slogan = Slogan.where(hide: false).order(:updated_at)&.first
-    @information = TimeWorking.first
   end
 
   def contact
@@ -45,5 +45,10 @@ class HomesController < ApplicationController
 
   def about
     @slogan = Slogan.where(hide: false).order(:updated_at)&.first
+  end
+
+  private
+  def information
+    @information = TimeWorking.first
   end
 end
