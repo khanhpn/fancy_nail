@@ -46,7 +46,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'pry'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'passenger'
 gem "slim-rails"
 gem 'friendly_id', '~> 5.1.0'
